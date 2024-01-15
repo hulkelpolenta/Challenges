@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+option csharp_namespace = "AuctionGrpcService";
+
+package auctionserv;
+
+
+service AuctionServ {
+// Creates a new auction for the owner
+  rpc AuctionNew (AuctionNewRequest) returns (AuctionBasicReply);
+
+  // Add a new auction for oher users
+  rpc AuctionAdd (AuctionAddRequest) returns (AuctionBasicReply);
+
+  // get the list of auction and winners
+  rpc AuctionGet (AuctionRequest) returns (AuctionGetReply);
+
+  // Creates a new bid
+  rpc AuctionBidNew (AuctionBidRequest) returns (AuctionBasicReply);
+
+  // Add a new bid for oher users
+  rpc AuctionBidAdd (AuctionBidUsersRequest) returns (AuctionBasicReply);
+}
+
+message AuctionBasicReply {
+  string message = 1;
+}
+
+// The request message containing the new auction.
+message AuctionNewRequest {
+  string auctionpicid = 1;
+  string auctionprice = 2;
+}
+
+
+  // The request message containing the add auction
+message AuctionAddRequest {
+  string auctionid = 1;
+  string auctionpicid = 2;
+  string auctionprice = 3;
+  string clientid = 4;
+}
+
+ // The request message containing the add bid
+message AuctionBidRequest {
+  string auctionid = 1;
+  string bidprice = 2;
+}
+
+ // The request message containing the add bid from users
+message AuctionBidUsersRequest {
+  string auctionid = 1;
+  string bidprice = 2;
+  string clientid = 3;
+}
+
+// The response message of the result
+
+
+message AuctionRequest {
+
+}
+
+// The response of auction and winners
+message AuctionGetReply {
+  repeated string data = 1;
+}
+
+

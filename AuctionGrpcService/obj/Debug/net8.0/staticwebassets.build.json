@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "aaqbohwCaOMWi+CkLQqK+0Pmmzf5+QoIEORsShLv0ec=",
+  "Source": "AuctionGrpcService",
+  "BasePath": "_content/AuctionGrpcService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
